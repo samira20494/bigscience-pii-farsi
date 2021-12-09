@@ -14,5 +14,5 @@ class Test(TestCase):
         self.assertFalse(street_address_match(addr))
 
     def test_postal_code_regex_match(self):
-        postal_code = "9876870773"
+        postal_code = "98768-70775"
         self.assertTrue(postal_code_match(postal_code))
