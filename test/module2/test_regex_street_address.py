@@ -14,11 +14,19 @@ class Test(TestCase):
         self.assertFalse(street_address_match(addr))
 
     def test_postal_code_regex_match(self):
-        postal_code = "98768-70775"
+        postal_code = "3876873775"
         self.assertTrue(postal_code_match(postal_code))
+
+    def test_invalid_postal_code_should_not_match(self):
+        postal_code = "28768-73775"
+        self.assertFalse(postal_code_match(postal_code))
 
     def test_phone_with_country_code_match_the_pattern(self):
         phone = "00989172225645"
+        self.assertTrue(phone_match(phone))
+
+    def test_phone_with_country_code_and_dash_match_the_pattern(self):
+        phone = "+98-917-2225645"
         self.assertTrue(phone_match(phone))
 
     def test_phone_without_country_code_match_the_pattern(self):

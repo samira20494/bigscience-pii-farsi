@@ -4,9 +4,7 @@ rulebase = [([
                  ("STREET_ADDRESS",
                   regex.compile('^[\u0600-\u06FF]+(?:[\s0-9()،,-]+[\u0600-\u06FF]+)*$', regex.IGNORECASE), None, None,
                   None),
-                 ("STREET_ADDRESS", regex.compile("^\\d{5}-\\d{5}$", regex.IGNORECASE), None, None, None),
-                 # ("STREET_ADDRE/zSS", regex.compile("^([1|3-9][1-9][1-9][1-9][1|6-9][1-9][1-9][1-9][1-9][1-9])|([1|3-9][1-9][1-9][1-9][5][-]\d{1-3})$", regex.IGNORECASE), None, None, None),
-                 # ("STREET_ADDRESS", regex.compile('\b(?!(\d)\1{3})[13-9]{4}[1346-9][013-9]{5}\b', regex.IGNORECASE), None, None, None),
+                 ("STREET_ADDRESS", regex.compile("^([1|3-9][1-9][1-9][1-9][1|6-9]\-?[1-9][1-9][1-9][1-9][1-9])|([1|3-9][1-9][1-9][1-9][5][-]\d{1-3})$", regex.IGNORECASE), None, None, None),
                  ("PHONE", regex.compile("(0098|\+98)?\-?\s?(0?\d{2})\-?\s?(\d{8})"), None, None, None),
                  ("PHONE", regex.compile("(0098|\+98)?\-?\s?(0?9\d{2})\-?\s?(\d{7})"), None, None, None),
              ], 1), ]
