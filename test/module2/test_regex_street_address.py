@@ -25,6 +25,14 @@ class Test(TestCase):
         phone = "00989172225645"
         self.assertTrue(phone_match(phone))
 
+    def test_phone_with_country_code_match_the_pattern_farsi(self):
+        phone = "۰۰۹۸۹۱۷۲۲۲۵۶۴۵"
+        self.assertTrue(phone_match(phone))
+
+    def test_phone_with_wrong_number_should_fail_farsi(self):
+        phone = "۰۰۹۸۹۱۷۲۲۲۵۶۴۵...."
+        self.assertFalse(phone_match(phone))
+
     def test_phone_with_country_code_and_dash_match_the_pattern(self):
         phone = "+98-917-2225645"
         self.assertTrue(phone_match(phone))
